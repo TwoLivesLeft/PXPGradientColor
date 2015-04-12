@@ -106,7 +106,7 @@
     CGPoint tanSize;
      
     CGFloat scopedAngle = [self __scopedAngleFromAngle:angle]; // Scopes the angle from 0 to 360. For example, if 'angle' equals 365, the scoped angle will be 5
-    CGFloat positiveAngle = abs(scopedAngle);
+    CGFloat positiveAngle = fabs(scopedAngle);
     
     if(scopedAngle < 0.f) // if provided angle < 0.0
         positiveAngle = 360. - positiveAngle; // then the new angle is equal to 360 - abs(scopedAngle)

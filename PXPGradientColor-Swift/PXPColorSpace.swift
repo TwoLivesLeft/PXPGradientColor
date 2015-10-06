@@ -21,16 +21,16 @@ class PXPColorSpace
     
     /** Convenience init with a RGB color space */
     convenience init() {
-        self.init(colorSpaceRef: CGColorSpaceCreateDeviceRGB())
+        self.init(colorSpaceRef: CGColorSpaceCreateDeviceRGB()!)
     }
     
     class func deviceRGBColorSpace() -> PXPColorSpace {
-        return PXPColorSpace(colorSpaceRef: CGColorSpaceCreateDeviceRGB())
+        return PXPColorSpace(colorSpaceRef: CGColorSpaceCreateDeviceRGB()!)
     }
     class func deviceCMYKColorSpace() -> PXPColorSpace {
-        return PXPColorSpace(colorSpaceRef: CGColorSpaceCreateDeviceCMYK())
+        return PXPColorSpace(colorSpaceRef: CGColorSpaceCreateDeviceCMYK()!)
     }
     class func deviceGrayColorSpace() -> PXPColorSpace {
-        return PXPColorSpace(colorSpaceRef: CGColorSpaceCreateDeviceGray())
+        return PXPColorSpace(colorSpaceRef: CGColorSpaceCreateDeviceGray()!)
     }
 }

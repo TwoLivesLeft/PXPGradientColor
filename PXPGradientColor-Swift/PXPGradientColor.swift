@@ -21,7 +21,7 @@ class PXPGradientColor
             cfLocations = UnsafePointer(locations!)
         }
         
-        var cgColors: NSArray = colors.map {
+        let cgColors: NSArray = colors.map {
             (color: UIColor!) -> AnyObject! in
             return color.CGColor as AnyObject!
             } as NSArray
@@ -36,7 +36,6 @@ class PXPGradientColor
     }
     
     convenience init() {
-        println("Lulz, using PXPGradientColor with a default gradient from black to white, enjoy!")
         self.init(colors: [UIColor.blackColor(), UIColor.whiteColor()], locations: nil, colorSpace: PXPColorSpace.deviceGrayColorSpace())
     }
     

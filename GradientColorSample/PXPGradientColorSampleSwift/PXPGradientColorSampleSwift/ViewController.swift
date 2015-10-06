@@ -40,7 +40,7 @@ class PXPGradientGeometryView : UIView {
         self.init(frame: frame, geometryType: .Rectangle)
     }
     
-    required init(coder aDecoder: NSCoder) {
+    required init?(coder aDecoder: NSCoder) {
         self.geometryType = PXPGeometryType(rawValue: aDecoder.decodeIntegerForKey("rawGeometryType"))!
         self.angle = aDecoder.decodeDoubleForKey("angle")
         super.init(coder: aDecoder)

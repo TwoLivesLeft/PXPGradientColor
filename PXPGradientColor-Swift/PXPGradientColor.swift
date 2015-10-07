@@ -26,7 +26,7 @@ class PXPGradientColor
             return color.CGColor as AnyObject!
             } as NSArray
         
-        return CGGradientCreateWithColors(colorSpaceRef, cgColors, cfLocations)
+        return CGGradientCreateWithColors(colorSpaceRef, cgColors, cfLocations)!
     }
     
     /** Initializes a PXPGradientColor object with given UIColors, locations, colorSpace. If no colorSpace provided, a deviceRGBColorSpace is used instead. If no locations provided, CGGradient automatically splits the colors by itself */
@@ -91,7 +91,7 @@ class PXPGradientColor
     }
     
     func draw(inBezierPath bezierPath: UIBezierPath, angle: Double) {
-        let ctx: CGContext = UIGraphicsGetCurrentContext()
+        let ctx: CGContext = UIGraphicsGetCurrentContext()!
         CGContextSaveGState(ctx)
         CGContextAddPath(ctx, bezierPath.CGPath)
         CGContextClip(ctx)
@@ -100,7 +100,7 @@ class PXPGradientColor
         var endPoint: CGPoint = CGPointZero
         self.retrieveStartAndEndPoints(&startPoint, endPoint: &endPoint, usingAngle: angle, inRect: bezierPath.bounds)
         
-        CGContextDrawLinearGradient(ctx, self.gradientRef, startPoint, endPoint, 0)
+        CGContextDrawLinearGradient(ctx, self.gradientRef, startPoint, endPoint, CGGradientDrawingOptions(rawValue: 0))
         CGContextRestoreGState(ctx)
     }
     

@@ -56,7 +56,7 @@ class PXPGradientGeometryView : UIView {
         if self.gradient != nil {
             self.gradient!.draw(inBezierPath: self.bezierPath, angle: self.angle)
         } else {
-            let ctx: CGContextRef = UIGraphicsGetCurrentContext()
+            let ctx: CGContextRef = UIGraphicsGetCurrentContext()!
             
             CGContextSaveGState(ctx);
             CGContextSetFillColorWithColor(ctx, UIColor.blackColor().CGColor)
